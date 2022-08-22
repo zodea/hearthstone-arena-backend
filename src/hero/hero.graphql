@@ -1,0 +1,28 @@
+type Hero {
+  id: Int!
+  name: String!
+  nameCN: String!
+}
+
+input CreateHeroInput {
+  name: String!
+  nameCN: String!
+}
+
+input UpdateHeroInput {
+  id: Int!
+  name: String!
+  nameCN: String!
+}
+
+type Query {
+  heros: [Hero]!
+  hero(id: Int!): Hero
+}
+
+type Mutation {
+  createHero(createHeroInput: CreateHeroInput!): Hero!
+  createHeroMany(createHeroInput: [CreateHeroInput!]): [Hero!]
+  updateHero(updateHeroInput: UpdateHeroInput!): Hero!
+  removeHero(id: Int!): Hero
+}
