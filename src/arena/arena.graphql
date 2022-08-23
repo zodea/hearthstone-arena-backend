@@ -1,0 +1,57 @@
+scalar DateTime
+
+type Arena {
+  id: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime
+  wins: Int!
+  losingGame: Int!
+  coins: Int!
+  cardPack: Int!
+  dust: Int
+  common: Int
+  rare: Int
+  epic: Int
+  heroId: Int!
+}
+
+input CreateArenaInput {
+  createdAt: DateTime
+  updatedAt: DateTime
+  wins: Int!
+  losingGame: Int!
+  coins: Int!
+  cardPack: Int!
+  dust: Int
+  common: Int
+  rare: Int
+  epic: Int
+  legendary: Int
+  heroId: Int!
+}
+
+input UpdateArenaInput {
+  id: Int!
+  updatedAt: DateTime
+  wins: Int
+  losingGame: Int
+  coins: Int
+  cardPack: Int
+  dust: Int
+  common: Int
+  rare: Int
+  epic: Int
+  legendary: Int
+  heroId: Int
+}
+
+type Query {
+  arenas: [Arena]!
+  arena(id: Int!): Arena
+}
+
+type Mutation {
+  createArena(createArenaInput: CreateArenaInput!): Arena!
+  updateArena(updateArenaInput: UpdateArenaInput!): Arena!
+  removeArena(id: Int!): Arena
+}

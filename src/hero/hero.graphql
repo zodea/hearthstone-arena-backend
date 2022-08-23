@@ -2,6 +2,7 @@ type Hero {
   id: Int!
   name: String!
   nameCN: String!
+  arenaWins: [Arena!]!
 }
 
 input CreateHeroInput {
