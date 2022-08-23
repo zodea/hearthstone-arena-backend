@@ -15,8 +15,8 @@ export class CreateHeroInput {
 
 export class UpdateHeroInput {
     id: number;
-    name: string;
-    nameCN: string;
+    name?: Nullable<string>;
+    nameCN?: Nullable<string>;
 }
 
 export class Hero {
@@ -33,8 +33,6 @@ export abstract class IQuery {
 
 export abstract class IMutation {
     abstract createHero(createHeroInput: CreateHeroInput): Hero | Promise<Hero>;
-
-    abstract createHeroMany(createHeroInput?: Nullable<CreateHeroInput[]>): Nullable<Hero[]> | Promise<Nullable<Hero[]>>;
 
     abstract updateHero(updateHeroInput: UpdateHeroInput): Hero | Promise<Hero>;
 

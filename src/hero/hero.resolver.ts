@@ -11,12 +11,7 @@ export class HeroResolver {
     return this.heroService.create(createHeroInput);
   }
 
-  @Mutation('createHeroMany')
-  createMany(@Args('createHeroInput') createHeroInput: CreateHeroInput[]) {
-    return this.heroService.createMany(createHeroInput);
-  }
-
-  @Query('hero')
+  @Query('heros')
   findAll() {
     return this.heroService.findAll();
   }

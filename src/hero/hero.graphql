@@ -11,8 +11,8 @@ input CreateHeroInput {
 
 input UpdateHeroInput {
   id: Int!
-  name: String!
-  nameCN: String!
+  name: String
+  nameCN: String
 }
 
 type Query {
@@ -22,7 +22,6 @@ type Query {
 
 type Mutation {
   createHero(createHeroInput: CreateHeroInput!): Hero!
-  createHeroMany(createHeroInput: [CreateHeroInput!]): [Hero!]
   updateHero(updateHeroInput: UpdateHeroInput!): Hero!
   removeHero(id: Int!): Hero
 }

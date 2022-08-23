@@ -11,12 +11,6 @@ export class HeroService {
     });
   }
 
-  createMany(createHeroInput: CreateHeroInput[]) {
-    return this.prisma.hero.createMany({
-      data: createHeroInput,
-    });
-  }
-
   findAll() {
     return this.prisma.hero.findMany();
   }
